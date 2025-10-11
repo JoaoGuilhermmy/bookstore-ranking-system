@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "file_parser.h": "c"
+        "file_parser.h": "c",
+        "models.h": "c"
     }
 }

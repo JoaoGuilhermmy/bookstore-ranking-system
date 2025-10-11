@@ -1,6 +1,7 @@
 #include "max_heap.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include "bst.h"
 
 MaxHeap *create_heap(int capacity)
 {
@@ -48,6 +49,7 @@ void print_heap(MaxHeap *heap)
                heap->books[i].sales);
         printf("-------------------------------\n");
     }
+    pause();
 }
 
 void consult_top_one(MaxHeap *heap)

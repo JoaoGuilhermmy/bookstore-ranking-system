@@ -12,7 +12,7 @@ int main()
 
     while (1)
     {
-        printf("Menu:\n");
+        clear_scream();
         printf("1. Carregar categorias \n");
         printf("2. Listar categorias\n");
         printf("3. Selecionar categoria\n");
@@ -25,6 +25,7 @@ int main()
 
         if (choice == 0)
         {
+            printf("Saindo...\n");
             free_heap(heap);
             free_tree(root);
             exit(0);
@@ -36,12 +37,14 @@ int main()
             root = load_categories_file("categorias.csv");
             break;
         case 2:
+            clear_scream();
             printf("Categorias:\n");
             in_ordem_traversal(root);
+            pause();
             break;
         case 3:
         {
-
+            clear_scream();
             char category_name[100];
             free_heap(heap);
             heap = NULL;
@@ -64,9 +67,12 @@ int main()
         }
         break;
         case 4:
+
             if (heap != NULL)
             {
+                clear_scream();
                 consult_top_one(heap);
+                pause();
             }
             else
             {
@@ -74,12 +80,14 @@ int main()
             }
             break;
         case 5:
+            clear_scream();
             if (heap != NULL)
             {
                 int n;
                 printf("Digite o valor de N: ");
                 scanf("%d", &n);
                 list_top_n(heap, n);
+                pause();
             }
             else
             {
@@ -87,9 +95,11 @@ int main()
             }
             break;
         case 6:
+            clear_scream();
             if (heap != NULL)
             {
                 int isbn, quantity;
+                print_heap(heap);
                 printf("Digite o ISBN do livro: ");
                 scanf("%d", &isbn);
                 printf("Digite a quantidade vendida: ");

@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <windows.h>
+#include <unistd.h>
 
 CategoryNode *new_node(int id, char category_name[], char books_file[])
 {
@@ -59,4 +61,22 @@ void free_tree(CategoryNode *root)
     free_tree(root->left);
     free_tree(root->right);
     free(root);
+}
+
+void clear_scream()
+{
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
+}
+
+void pause()
+{
+#ifdef _WIN32
+    Sleep(3000);
+#else
+    sleep(segundos);
+#endif
 }
